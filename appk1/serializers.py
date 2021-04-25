@@ -18,9 +18,9 @@ class ActorSerializer(serializers.ModelSerializer):
         fields = ['name']
 
 class FilmFullSerializer(serializers.ModelSerializer):
-    director = DirectorSerializer(many=False)
-    prize = PrizeSerializer(many=True)
-    actors = ActorSerializer(many=True)
+    director = DirectorSerializer(many=False, read_only=True)
+    prize = PrizeSerializer(many=True, read_only=True)
+    actors = ActorSerializer(many=True, read_only=True)
 
     class Meta:
         model = Film
