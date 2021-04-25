@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Film, Director
+from .models import Film, Director, Prize
 # Register your models here.
 
 @admin.register(Film)
@@ -9,3 +9,4 @@ class FilmAdmin(admin.ModelAdmin):
     search_fields = ['title', 'description']
 
 admin.site.register(Director)
+admin.site.register(Prize)
