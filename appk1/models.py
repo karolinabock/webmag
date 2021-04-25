@@ -23,6 +23,10 @@ class Prize(models.Model):
     film = models.ForeignKey(Film, on_delete=models.CASCADE,
                              related_name="prize")
 
+class Actor(models.Model):
+    name = models.CharField(max_length=128)
+    films = models.ManyToManyField(Film, related_name='actors')
+
 
 """"musi być coś w nawiasie, zeby django wiedzial jak stworzyć
     blank = czy pole wymagane
